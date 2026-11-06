@@ -1,0 +1,7 @@
+VirusTotal collates results from over 70 antivirus engines and website scanners into a single interface. Submit a file, a URL, a domain, or a file hash. 
+  VirusTotal will tell you whether any of those engines have flagged it as malicious or not.
+
+
+
+Whilst not foolproof, VirusTotal is a popular resource in the blue teaming community for obtaining a general consensus on suspicious files and links, as well as 
+  for gathering intelligence on new threats on the move.
