@@ -1,0 +1,32 @@
+How does remote access work (SSH)?
+SSH (Secure Socket Shell) is a protocol that lets two devices talk to each other securely over a network. It protects whatever you send so it can't be read by anyone else when it's travelling across the internet, then the contents get revealed once it reaches the other machine. Which is a foundational thing that forms all of cyber security.
+
+
+
+SSH allows us to login to computers remotely for us to use. This method is popular with Linux because often, these computers do not come with a desktop, so we must use the command line. As you will remember, the first computer that you launched is running in the background, so we will need to access this somehow.
+
+Logging in to your remote Linux computer
+The command to use SSH to login to our remote computer is simple. We need two things:
+
+The IP address of the remote computer
+The username & password for an account that is on that remote computer.
+The details of these has been provded below.
+
+Credentials
+
+Username
+ 
+tryhackme
+ 
+Password
+ 
+tryhackme
+ 
+IP address
+ 
+10.49.164.169
+ 
+Command to run in the terminal
+ 
+SSH
+ssh tryhackme@10.49.164.169
