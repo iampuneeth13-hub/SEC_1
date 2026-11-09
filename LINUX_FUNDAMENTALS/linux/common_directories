@@ -1,0 +1,37 @@
+This task will take you through some of the main directories that you will find on Linux. It begins at the top, /. Confusingly, this is also known as the root. When discussing directories, we generally use the term "root" to mean the top. 
+
+For example, / is the root of the filesystem, but root can also refer to the top of a directory, such as, if you're working on a project that has many directories, "root" would also be the main directory that contains all of the project's files. Let's take a look at what that looks like:
+
+
+
+It might be helpful to think of the filesystem structure as a tree:
+
+The trunk is /
+The branches are directories such as /etc, /var, /home
+The leaves are further directories and files within
+/etc
+This root directory is one of the most important root directories on your system. The etc folder (short for etcetera) is a commonplace location where system and program files are stored. that are used by Linux.
+
+For example, the sudoers file highlighted in the terminal below contains a list of the users & groups that have permission to run sudo or a set of commands as the root user.
+
+/var
+The "/var" (short for variable data) directory is another main root folder on Linux. It stores data that services and applications write to or read often, like log files (kept in /var/log), and other data not tied to a specific user, such as databases.
+
+
+Some notable contents of the /var directory
+tryhackme@linux2:/var$ ls
+backups log opt tmp
+/root
+Unlike the /home directory, the /root folder is actually the home for the "root" system user. There isn't anything more to this folder other than just understanding that this is the home directory for the "root" user.
+
+Info: Although "root" is a user, the home location for this is treated differently. One might expect it be /home/root which is incorrect .
+
+/tmp
+This is a unique root directory found on a Linux install. Short for "temporary", the /tmp directory is temporay and is used to store data that is only needed to be accessed once or twice. Similar to the memory on your computer, once the computer is restarted, the contents of this folder are cleared out.
+
+Info: Unlike any other directory on Linux, any user can store things here!
+
+
+Some examples of how the /tmp directory can be used
+root@linux2:/tmp# ls
+todelete trash.txt rubbish.bin
