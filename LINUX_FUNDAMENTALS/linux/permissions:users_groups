@@ -1,0 +1,36 @@
+By now you've probably noticed that certain users can't access certain files or folders. We've already covered some commands for checking what access you have and where it leads.
+
+We also covered how flags and switches extend what a command does. Take ls, which lists the contents of a directory. Adding the -l argument shows ten columns of detail, like in the terminal below. For now, we only care about the first three of those columns.
+
+
+Using ls -l to list the permissions of all files in the directory
+tryhackme@linux2:~$ ls -l
+-rw-r--r-- 1 tryhackme tryhackme 0 Feb 19 10:37 file1
+-rw-r--r-- 8 tryhackme tryhackme 0 Feb 19 10:37 file2
+These three columns look intimidating at first, but they're key to figuring out important details about a file or folder, including whether you have access to it. Each file or folder has a set of characteristics that determine what actions are allowed on it, and which users or groups are allowed to perform them, such as the following:
+
+Read (open the file)
+Write (make changes to the file)
+Execute (run the file, such as a script or application)
+The difference between Users & Groups
+One of the strengths of Linux is how specific permissions can get. A file has one owner, but you can also assign a group (of users) to that file, and give that group its own set of permissions, separate from the owner's. So the group of users may only be to read the file while the owner has full control, or any other combination, without changing who actually owns it.
+
+Here's a real-world example: The IT staff for a school's computer will need full access to install software and manage all students on a machine. But students shouldn't be logged in as the administrator just to do their schoolwork, since that would give them control over the entire system, including other students' files and grades.
+
+
+
+Instead, each student gets their own limited account, and administrators use separate commands to switch into a higher-access account only when needed.
+
+Switching Between Users
+
+Switching between users on a Linux install is easy work thanks to the su command. Unless you are the root user (or using root permissions through sudo), then you are required to know two things to be able to become this user:
+
+
+
+The su command takes a couple of switches that may be of relevance to you. For example, executing a command once you log in or specifying a specific shell to use.
+
+Simply, by providing the -lswitch to su, we start a shell that is much more similar to the actual user logging into the system - we inherit a lot more properties of the new user.
+
+Info: The su command takes a couple of arguments, such as logging in interactively or running a command when logging in. We not go over these for now, but feel free to explore the MAN pages of su as homework!
+
+Now it's time to put this to the test on the Linux machine!
