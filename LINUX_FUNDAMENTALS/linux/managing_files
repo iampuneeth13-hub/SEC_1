@@ -1,0 +1,64 @@
+In part 1, we covered some of the most fundamental commands to interact with the filesystem on the Linux machine. For example, we covered how to list and find the contents of folders using ls and find and navigating the filesystem using cd.
+
+However, in cyber secuity, you will find yourself having to interact with the filesystem in much more depth. In this task, we're going to learn some more commands for interacting with the filesystem to allow us to:
+
+create files and folders
+move files and folders
+delete files and folders
+More specifically, you are going the learn following commands:
+
+Command	Full Name	Purpose
+touch	touch	Create file
+mkdir	make directory	Create a folder
+cp	copy	Copy a file or folder
+mv	move	Move a file or folder
+rm	remove	Remove a file or folder
+Info: Rather than having to navigate folder by folder, we can provide full file paths, i.e. directory1/directory2/note for all of these commands.
+
+Creating Files and Folders
+Creating files on Linux is simple. The touch command takes one argument - the name you want to give the file. So for example, touch recipe, will create a file called "recipe". Keep in mind that touch only creates a blank, empty file. If you want to add actual content to it, you'll need something else, like the echo command, or a text editor, which we will come onto in the next room.
+
+
+Using touch to create a new file
+tryhackme@linux2:~$ touch recipe
+tryhackme@linux2:~$ ls           
+recipe
+This is a similar process for making a folder (directory), which just involves using the mkdir command and again providing the name that we want to assign to the folder. For example, creating the folder "mydirectory" using mkdir mydirectory.
+
+
+Creating a new directory with mkdir
+tryhackme@linux2:~$ mkdir mydirectory
+tryhackme@linux2:~$ ls           
+folder1 mydirectory recipe
+Info: Remember, we can create multiple files or folder with one command. If we want to make folders within folders, we can use mkdir Documents/Homework/Assignment1.
+
+Removing Files and Folders
+rm is extraordinary out of the commands that we've covered so far. You can simply remove files using rm. However, you need to provide the -R argument alongside the name of the folder you wish to remove, like so:
+
+
+Using rm to remove a directory
+tryhackme@linux2:~$ rm -R mydirectory
+tryhackme@linux2:~$ ls           
+folder1
+Copying and Moving Files & Folders
+Copying and moving files is a frequent thing you will be doing on Linux. Starting with cp, this command takes two arguments:
+
+The name of the existing file
+The name we wish to assign to the new file when copying
+cp copies the entire contents of the existing file into a new file. In the screenshot below, we are copying "recipe" to "recipe2".
+
+
+Using cp to copy a file
+tryhackme@linux2:~$ cp recipe recipe2
+tryhackme@linux2:~$ ls           
+folder1 recipe recipe2
+Moving a file uses the mv command, which also takes two arguments like cp. The difference is that mv doesn't copy the file, it moves or renames the original. You can use it to move a file into a different folder, or to rename a file or folder in place.
+
+For example, running mv recipe recipe2 renames "recipe" to "recipe2", and "recipe" keeps all of the original contents.
+
+ 
+
+Using mv to move a file
+tryhackme@linux2:~$ mv recipe recipe2
+tryhackme@linux2:~$ ls           
+folder1 recipe2
