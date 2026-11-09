@@ -1,0 +1,60 @@
+Most commands accept extra options called arguments, written as a hyphen plus the option (a flag/switch), like the -c in ping -c. By default, a command just does its basic job. For example, ls alone lists files but skips hidden ones. We can add an argument to change that behavior.
+
+ 
+
+Using our ls example, ls informs us that there is only one folder named "folder1" as highlighted in the snippet below.
+
+
+Using ls to view the contents of a directory
+tryhackme@linux2:~$ ls
+folder1
+tryhackme@linux2:~$
+However, after using the -a argument (short for --all), we now suddenly have an output with a few more files and folders such as ".hiddenfolder". Files and folders with "." are hidden files.
+
+
+Using ls to view hidden folders
+tryhackme@linux2:~$ ls -a 
+.hiddenfolder folder1
+tryhackme@linux2:~$
+Commands that allow arguments to be used will often have a --help argument. This argument will list the possible options that the command accepts, provide a brief description and example of how to use it.
+
+
+Listing the options we can use with ls
+tryhackme@linux2:~$ ls --help
+Usage: ls [OPTION]... [FILE]...
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                               e.g., '--block-size=M'; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+--snippet cut for brevity--
+tryhackme@linux2:~$
+Introducing the MAN(ual) page
+The MAN(ual) pages are just like the instructions you get with your phone. It's a source of information on Linux machines which tells you the arguments available for a command.
+
+To access this information, we can use the man command and then provide the command we want to read the documentation for. Using our ls example, we would use man ls to view the manual pages for ls like so:
+
+
+Listing the options we can use with ls
+tryhackme@linux2:~$ man ls
+LS(1)                                               User Commands                                               LS(1)
+NAME
+       ls - list directory contents
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+DESCRIPTION
+       List  information  about the FILEs (the current directory by default).  Sort entries alphabetically if none of
+       -cftuvSUX nor --sort is specified.
+
+       Mandatory arguments to long options are mandatory for short options too.
+       -a, --all
+              do not ignore entries starting with .
+       -A, --almost-all
+              do not list implied . and ..
+       --author
+              with -l, print the author of each file
+--snippet cut for brevity--
